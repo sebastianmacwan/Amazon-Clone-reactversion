@@ -24,9 +24,15 @@ const app = express();
 
 // Enable CORS for all routes. It's crucial to place this early.
 // app.use(cors());
+// app.use(cors({
+//   origin: 'https://amazon-clone-reactversion-1.onrender.com',
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: 'https://amazon-clone-reactversion-1.onrender.com',
-  credentials: true
+    // Change this to your actual Vercel project URL (the frontend URL)
+    origin: 'https://amazon-clone-reactversion.vercel.app',
+    credentials: true
 }));
 
 // Parse incoming request bodies in JSON format
