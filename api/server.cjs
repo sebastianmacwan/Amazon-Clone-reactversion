@@ -11,7 +11,7 @@ const path = require("path");
 const crypto = require("crypto"); // For generating secure tokens
 
 // Database connection pool (assuming db.cjs exports a pg.Pool instance)
-const db = require("./config/db.cjs"); // Using 'db' for the pool
+const db = require("api/config/db.cjs"); // Using 'db' for the pool
 
 // Configure Multer for file uploads (if used in contact form)
 const storage = multer.memoryStorage();
@@ -47,9 +47,9 @@ const transporter = nodemailer.createTransport({
 
 // --- Route Imports ---
 // Import your product routes
-const productsRouter = require("./routes/products.cjs");
+const productsRouter = require("api/routes/products.cjs");
 // Import your cart routes
-const cartRoutes = require('./routes/carts.cjs'); // Make sure cart.cjs exists and exports a router
+const cartRoutes = require('api/routes/carts.cjs'); // Make sure cart.cjs exists and exports a router
 
 // --- Route Mounting ---
 // Mount the products router under the /api/products path.
@@ -382,7 +382,8 @@ app.use((err, req, res, next) => {
 // ==========================
 // Start Server
 // ==========================
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`✅ Server running on http://localhost:${PORT}`);
-});
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => {
+//     console.log(`✅ Server running on http://localhost:${PORT}`);
+// });
+module.exports = app;
