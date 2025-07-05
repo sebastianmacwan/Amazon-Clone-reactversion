@@ -17,5 +17,6 @@
       "dest": "/dist/$1"
     }
   ],
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "installCommand": "npm install && cd api && npm install"
 }
